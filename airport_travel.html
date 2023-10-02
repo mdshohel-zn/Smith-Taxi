@@ -1,0 +1,71 @@
+---
+layout: page
+title: "Airport Travel"
+airports:
+- name: "London Gatwick Airport"
+  burgess_saloon: "£34"
+  burgess_mpv: "£40"
+  haywards_saloon: "30"
+  haywards_mpv: "£38"
+- name: "London Heathrow Airport"
+  burgess_saloon: "£85"
+  burgess_mpv: "£94"
+  haywards_saloon: "£80"
+  haywards_mpv: "£90"
+- name: "Stansted Airport"
+  burgess_saloon: "£110"
+  burgess_mpv: "£120"
+  haywards_saloon: "£104"
+  haywards_mpv: "£114"
+- name: "Luton Airport"
+  burgess_saloon: "£110"
+  burgess_mpv: "£120"
+  haywards_saloon: "£104"
+  haywards_mpv: "£114"
+- name: "City Airport"
+  burgess_saloon: "£95"
+  burgess_mpv: "£104"
+  haywards_saloon: "£90"
+  haywards_mpv: "£100"
+- name: "Farnborough Airport"
+  burgess_saloon: "£100"
+  burgess_mpv: "£110"
+  haywards_saloon: "£95"
+  haywards_mpv: "£104"
+---
+<div id="airport_travel">
+    <h1 id="airport_travel" class="display-3">Airport Travel</h1>
+    <p class="lead">See below for prices to and from the main London Airports from Mid Sussex. For competitive quotes for journeys from other areas, please contact us on {{layout.secondary_number}}.</p>
+    <hr>
+
+    {% for airport in page.airports %}
+    <h2 class="display-4">{{ airport.name }}</h2>
+    <div class="row">
+        <div class="col-lg-4 airport_box">
+            <h3>From Burgess Hill</h3> Saloon &amp; Estate: {{ airport.burgess_saloon }}
+            <br> 5-7 Seater: {{ airport.burgess_mpv }}
+        </div>
+        <div class="col-lg-4 airport_box">
+            <h3>From Haywards Heath</h3> Saloon &amp; Estate: {{ airport.haywards_saloon }}
+            <br> 5-7 Seater: {{ airport.haywards_mpv }}
+        </div>
+        <div class="col-lg-4 airport_box">
+            <h3>From other Areas</h3>
+            <p>Please call us on <a href="tel:{{layout.primary_number | remove: ' ' }}">{{layout.primary_number}}</a> or <a href="tel:{{layout.secondary_number | remove: ' ' }}">{{layout.secondary_number}}</a> for a highly competitive quote.</p>
+        </div>
+    </div>
+    <p class="d-xs-block d-sm-block d-md-none d-xl-none float-right scrollto"><a href="#top">Back to top</a></p>
+    <div class="clearfix"></div>
+    <hr>
+    {% endfor %}
+    <h2 class="display-4">Other UK Airport</h2>
+    <div class="row">
+        <div class="col-12">
+            <h3>From Anywhere in the UK</h3>
+            <p>Please call us on <a href="tel:{{layout.primary_number | remove: ' ' }}">{{layout.primary_number}}</a> or <a href="tel:{{layout.secondary_number | remove: ' ' }}">{{layout.secondary_number}}</a> for a highly competitive quote. Alternatively book online now at one of our partners <a target="_blank" href="https://goairport.cab">GoAirport</a>.</p>
+        </div>
+    </div>
+    <p class="d-xs-block d-sm-block d-md-none d-xl-none float-right scrollto"><a href="#top">Back to top</a></p>
+    <div class="clearfix"></div>
+    <hr>
+</div>

@@ -1,0 +1,4 @@
+env: production
+plugins:
+  - octopress-minify-html
+include: [_redirects]
